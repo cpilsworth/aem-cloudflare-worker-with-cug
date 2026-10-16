@@ -17,6 +17,7 @@ Both the outer CDN cache and the function's fetch cache are bypassed. All
 responses are private/no-store, including public pages and login errors. This
 deliberate first-release policy prevents a cache hit from bypassing the gate.
 
+The deployment target is [Cloud Manager program 31359](https://experience.adobe.com/#/@adobeemea78/cloud-manager/edge-delivery.html/program/31359).
 The configured gateway URL is `https://poc.pilsworth.org`, backed by
 `https://main--authz--cpilsworth.aem.live`. Register
 `https://poc.pilsworth.org/auth/callback` with the identity provider. These values
@@ -122,7 +123,12 @@ aio login
 aio aem edge-functions setup
 ```
 
-1. Select the intended EDS environment. Add secrets and deploy
+1. In setup, select the Adobe organization corresponding to the linked Cloud
+   Manager program, program **31359**, and the Edge Delivery site for
+   `poc.pilsworth.org`. Confirm that the selected site's origin is
+   `main--authz--cpilsworth.aem.live` before deploying. The program URL identifies
+   the target but does not grant CLI access; the signed-in Adobe account must
+   have access to that program and site. Add secrets and deploy
    `config/edgeFunctions.yaml` through its Cloud Manager configuration pipeline to
    register the function/backends/stores. If `cdn.yaml` would activate routing at
    the same time, stage registration separately so an empty function never

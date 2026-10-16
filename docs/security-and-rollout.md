@@ -4,9 +4,21 @@ Run these checks on the actual staging custom domain before production cutover.
 Local mocks and Viceroy cannot establish the behavior of the managed CDN, real
 EDS metadata, IdP configuration or Cloudflare account controls.
 
+## Target
+
+- [Cloud Manager program 31359](https://experience.adobe.com/#/@adobeemea78/cloud-manager/edge-delivery.html/program/31359).
+- Gateway: `https://poc.pilsworth.org`.
+- EDS origin: `https://main--authz--cpilsworth.aem.live`.
+- OIDC callback: `https://poc.pilsworth.org/auth/callback`.
+
+These are the intended deployment values. Confirm the program's EDS site mapping,
+certificate, DNS and configuration pipeline before enabling routing. Adobe CLI
+deployment access is separate from the OIDC client used for visitor login.
+
 ## Required inputs
 
-- Cloud Manager program/EDS site, configuration pipeline and store-capable environment.
+- Authenticated access to the target program/EDS site, its configuration pipeline
+  and a store-capable environment.
 - Custom production/staging domains and matching certificates.
 - EDS origin with site authentication enabled and its site-token secret.
 - IdP issuer, client, endpoints, callback registration and group mapping.
