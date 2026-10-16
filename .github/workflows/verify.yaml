@@ -9,11 +9,12 @@ jobs:
   test-and-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - run: npm install
+      - run: npm audit --audit-level=high
       - run: npm test
       - run: npm run build:wasm
       - name: Install local Compute runner
@@ -22,7 +23,7 @@ jobs:
         run: npx js-compute-runtime test/runtime-smoke.js bin/smoke.wasm
       - name: Exercise WebCrypto and authentication in Viceroy
         run: node scripts/runtime-smoke.mjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: cug-gateway-wasm
           path: bin/main.wasm
