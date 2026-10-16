@@ -8,7 +8,7 @@ service_id = ""
 build = "npm run build:wasm"
 
 [local_server.backends.eds]
-url = "https://main--mysite--hlxsites.aem.live"
+url = "https://main--authz--cpilsworth.aem.live"
 
 [local_server.backends.oidc-token]
 url = "https://login.example.com"
@@ -20,7 +20,7 @@ url = "https://login.example.com"
 format = "inline-toml"
 
 [local_server.config_stores.config_default.contents]
-ORIGIN_HOSTNAME = "main--mysite--hlxsites.aem.live"
+ORIGIN_HOSTNAME = "main--authz--cpilsworth.aem.live"
 PUBLIC_ORIGIN = "https://www.example.com"
 AUTH_MODE = "deny"
 PROTECTED_PATH_PREFIXES = '["/"]'

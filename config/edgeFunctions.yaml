@@ -5,7 +5,7 @@ data:
     - name: cug-gateway
       origins:
         - name: eds
-          domain: main--mysite--hlxsites.aem.live
+          domain: main--authz--cpilsworth.aem.live
         # Update these domains to match the configured token and JWKS endpoints.
         - name: oidc-token
           domain: login.example.com
@@ -13,7 +13,7 @@ data:
           domain: login.example.com
   configs:
     - key: ORIGIN_HOSTNAME
-      value: main--mysite--hlxsites.aem.live
+      value: main--authz--cpilsworth.aem.live
     - key: PUBLIC_ORIGIN
       value: https://www.example.com
     - key: AUTH_MODE
