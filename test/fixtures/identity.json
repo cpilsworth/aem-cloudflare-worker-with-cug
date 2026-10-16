@@ -1,0 +1,16 @@
+{
+  "now": 1800000000,
+  "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6InNtb2tlIn0.eyJub25jZSI6InNtb2tlLW5vbmNlIiwiZ3JvdXBzIjpbInRlYW0tYSJdLCJzdWIiOiJzbW9rZS11c2VyIiwiaXNzIjoiaHR0cHM6Ly9pZHAuZXhhbXBsZS5jb20iLCJhdWQiOiJzbW9rZS1jbGllbnQiLCJpYXQiOjE4MDAwMDAwMDAsImV4cCI6MTgwMDAwMDMwMH0.RAjI9DvImO2f-6fnEPlt72e99A3xf6ufuyqWh-M5saFKGa7_rrUB0FIUISZdVd-ZulwEZhFHSJs0TVwxY9_VKg9iczVgdeUO3xqZs77o33_DlXP75EIuRpAJPRl-24-Mgzppelr4InFHQORpfx4dxhRg-eapBtJwjzJucdPKaW3qFoPjj0GTJFIqCJ6Jbp0vZ9ymcOz6sR3psOu8vNkFZj6houZMejvJOAZfH03XGvto-S-DaPAVOpZ71Qo2CCay3OJr9vQ0ygg6vU1tBw2gySnhAtt-4gNGHPVSGj8wN3N8xcNz5Pp8PN8QacHwDTnGAJ2_eFbl8564-sfUg0RYNA",
+  "jwks": {
+    "keys": [
+      {
+        "kty": "RSA",
+        "n": "tnBx1WhHD_twNEtHHOluFCDs2hmATUyZKWsEKkPIJGdoxywpiIlk_BXmCkpSlnh8AndyPcmYCZdttt_KPs5QGv4Q3smPXJK0FOeeP3yX8ZdtC3W5DSzirJB5GiZ0Ptb011b9VErM9b_7Nh3xbxZTPQDVnKWP4FigZWV5jYUuLDlQKA12Uy6ptrm45oV2aXbt-zlixRqNIa8xdw-qyYfy68A4tz2_iM9Ob-EFQBPAd8e_K8emMUd0eYTwED4987qQmmFjZxqF2koZo1XgR425vnqzhV8dXg9z_udXtZa9u_OYQ0RoYRkwcihX5ptVJ8SrJj4clYerWiS3mXOcI0argQ",
+        "e": "AQAB",
+        "kid": "smoke",
+        "alg": "RS256",
+        "use": "sig"
+      }
+    ]
+  }
+}
