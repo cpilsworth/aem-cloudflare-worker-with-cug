@@ -17,6 +17,12 @@ Both the outer CDN cache and the function's fetch cache are bypassed. All
 responses are private/no-store, including public pages and login errors. This
 deliberate first-release policy prevents a cache hit from bypassing the gate.
 
+The configured gateway URL is `https://poc.pilsworth.org`, backed by
+`https://main--authz--cpilsworth.aem.live`. Register
+`https://poc.pilsworth.org/auth/callback` with the identity provider. These values
+configure the application; Cloud Manager domain mapping, TLS, DNS and deployment
+must still be completed for the target site.
+
 ## Prerequisites
 
 - A Cloud Manager program with an onboarded EDS site, custom domain and EDS

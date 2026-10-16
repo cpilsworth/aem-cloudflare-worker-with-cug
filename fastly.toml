@@ -21,7 +21,7 @@ format = "inline-toml"
 
 [local_server.config_stores.config_default.contents]
 ORIGIN_HOSTNAME = "main--authz--cpilsworth.aem.live"
-PUBLIC_ORIGIN = "https://www.example.com"
+PUBLIC_ORIGIN = "https://poc.pilsworth.org"
 AUTH_MODE = "deny"
 PROTECTED_PATH_PREFIXES = '["/"]'
 

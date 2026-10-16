@@ -15,7 +15,7 @@ data:
     - key: ORIGIN_HOSTNAME
       value: main--authz--cpilsworth.aem.live
     - key: PUBLIC_ORIGIN
-      value: https://www.example.com
+      value: https://poc.pilsworth.org
     - key: AUTH_MODE
       value: deny
     # Require explicit CUG metadata everywhere until the content policy is reviewed.
