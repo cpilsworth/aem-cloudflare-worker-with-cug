@@ -1,0 +1,29 @@
+manifest_version = 3
+name = "aem-cug-edge-function"
+description = "AEM closed user group gateway"
+language = "javascript"
+service_id = ""
+
+[scripts]
+build = "npm run build:wasm"
+
+[local_server.backends.eds]
+url = "https://main--authz--cpilsworth.aem.live"
+
+[local_server.backends.oidc-token]
+url = "https://login.example.com"
+
+[local_server.backends.oidc-jwks]
+url = "https://login.example.com"
+
+[local_server.config_stores.config_default]
+format = "inline-toml"
+
+[local_server.config_stores.config_default.contents]
+ORIGIN_HOSTNAME = "main--authz--cpilsworth.aem.live"
+PUBLIC_ORIGIN = "https://poc.pilsworth.org"
+AUTH_MODE = "deny"
+PROTECTED_PATH_PREFIXES = '["/"]'
+
+# Local development deliberately has no credentials. Add local-only secret
+# store entries using Fastly's file-based secret configuration; never commit them.

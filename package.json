@@ -1,13 +1,27 @@
 {
   "private": true,
-  "name": "aem-prod-worker",
+  "name": "aem-cug-edge-function",
   "version": "1.0.0",
-  "description": "A template for kick starting a AEM Production Worker project",
-  "module": "./src/index.mjs",
+  "description": "AEM Edge Functions gateway with closed user group enforcement",
+  "type": "module",
+  "engines": { "node": ">=22" },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "log": "wrangler tail -f pretty"
+    "test": "node --test test/*.test.js",
+    "build": "aio aem edge-functions build",
+    "build:wasm": "js-compute-runtime src/index.js bin/main.wasm",
+    "serve": "aio aem edge-functions serve",
+    "deploy": "aio aem edge-functions deploy cug-gateway",
+    "log": "aio aem edge-functions tail-logs cug-gateway"
+  },
+  "dependencies": {
+    "@fastly/js-compute": "3.46.0",
+    "jose": "6.1.3"
+  },
+  "overrides": {
+    "esbuild": ">=0.28.1",
+    "@bytecodealliance/weval": "^0.5.0"
   },
   "author": "",
   "license": "Apache-2.0"
 }
+

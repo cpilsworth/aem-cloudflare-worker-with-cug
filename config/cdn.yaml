@@ -1,0 +1,22 @@
+kind: CDN
+version: '1'
+data:
+  originSelectors:
+    rules:
+      # Must cover anonymous requests and every content representation.
+      # Merge carefully with existing rules: no earlier route may bypass this gate.
+      - name: route-all-through-cug
+        when: { reqProperty: path, like: '/*' }
+        action:
+          type: selectAemOrigin
+          originName: edgefunction-cug-gateway
+          skipCache: true
+  responseTransformations:
+    rules:
+      - name: remove-internal-cug-metadata
+        when: '*'
+        actions:
+          - type: unset
+            respHeader: x-aem-cug-required
+          - type: unset
+            respHeader: x-aem-cug-groups

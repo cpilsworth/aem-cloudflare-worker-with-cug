@@ -1,2 +1,9 @@
 node_modules/
 .DS_Store
+bin/
+pkg/
+.fastly/
+.aio
+.env*
+*.local.toml
+coverage/

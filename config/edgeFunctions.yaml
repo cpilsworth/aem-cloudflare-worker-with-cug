@@ -1,0 +1,48 @@
+kind: EdgeFunctions
+version: '1'
+data:
+  functions:
+    - name: cug-gateway
+      origins:
+        - name: eds
+          domain: main--authz--cpilsworth.aem.live
+        # Update these domains to match the configured token and JWKS endpoints.
+        - name: oidc-token
+          domain: login.example.com
+        - name: oidc-jwks
+          domain: login.example.com
+  configs:
+    - key: ORIGIN_HOSTNAME
+      value: main--authz--cpilsworth.aem.live
+    - key: PUBLIC_ORIGIN
+      value: https://poc.pilsworth.org
+    - key: AUTH_MODE
+      value: deny
+    # Require explicit CUG metadata everywhere until the content policy is reviewed.
+    # Use [] only when the origin's CUG metadata alone is the intended authority.
+    - key: PROTECTED_PATH_PREFIXES
+      value: '["/"]'
+    # To enable OIDC, set AUTH_MODE to oidc and fill these values and secrets.
+    # - key: OIDC_ISSUER
+    #   value: https://login.example.com
+    # - key: OIDC_CLIENT_ID
+    #   value: your-client-id
+    # - key: OIDC_AUTHORIZATION_ENDPOINT
+    #   value: https://login.example.com/authorize
+    # - key: OIDC_TOKEN_ENDPOINT
+    #   value: https://login.example.com/oauth/token
+    # - key: OIDC_JWKS_URI
+    #   value: https://login.example.com/.well-known/jwks.json
+    # - key: OIDC_SCOPE
+    #   value: openid profile groups
+    # - key: OIDC_GROUPS_CLAIM
+    #   value: groups
+    # - key: OIDC_TOKEN_AUTH_METHOD
+    #   value: client_secret_post
+  secrets:
+    - key: ORIGIN_AUTHENTICATION
+      value: ${{CUG_ORIGIN_TOKEN}}
+    # - key: SESSION_SIGNING_KEY
+    #   value: ${{CUG_SESSION_SIGNING_KEY}}
+    # - key: OIDC_CLIENT_SECRET
+    #   value: ${{CUG_OIDC_CLIENT_SECRET}}
